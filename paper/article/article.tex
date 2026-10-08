@@ -1,0 +1,35 @@
+% The article (article-form thesis, or a journal submission).
+% Switch to your target journal's class when you know it (e.g. elsarticle for Elsevier journals).
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage[margin=25mm]{geometry}
+\usepackage{graphicx,booktabs}
+\usepackage[round,authoryear]{natbib}
+\usepackage[hidelinks]{hyperref}
+\bibliographystyle{apalike}
+% The thesis build defines \thesisbuild: no page numbers, the thesis numbers the pages.
+\ifdefined\thesisbuild\pagestyle{empty}\fi
+
+\title{Forecasting Value-at-Risk with Neural GARCH Models on Central European Stock Indices}
+\author{Anna Nowak \and Mateusz Buczy\'nski}
+\date{}
+
+\begin{document}
+\maketitle
+\ifdefined\thesisbuild\thispagestyle{empty}\fi
+
+\begin{abstract}
+One paragraph: problem, method, main result, implication.
+\end{abstract}
+
+\section{Introduction}
+The GARCH model \citep{bollerslev1986} and its neural extension \citep{buczynski2024garchnet}.
+
+\section{Data and method}
+\section{Results}
+\section{Conclusions}
+
+\bibliography{../references}
+\end{document}

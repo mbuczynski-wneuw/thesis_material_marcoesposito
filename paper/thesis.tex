@@ -1,0 +1,49 @@
+% Diploma thesis at WNE UW. Build: `make` in this folder (or `make paper` in the repository root).
+\documentclass[12pt,a4paper,oneside,openany]{report}
+\usepackage{wne}
+
+% Form of the thesis: comment out the next line for the traditional form (chapters only).
+\newif\ifarticleform
+% \articleformtrue
+
+\input{metadata}
+
+\begin{document}
+
+\wnetitlepage
+\wnedeclarations
+\wneabstractpage
+\tableofcontents
+\clearpage
+
+\ifarticleform
+  % Article form: the article (built from article/article.tex) followed by the supplement,
+  % which you write alone: literature, methodology and results in more depth.
+  \addcontentsline{toc}{chapter}{Scientific article}
+  \wneseparator{Scientific article}
+  \includepdf[pages=-,pagecommand={\thispagestyle{plain}}]{article/article-thesis.pdf}
+  \addcontentsline{toc}{chapter}{Supplement}
+  \wneseparator{Supplement}
+  \input{chapters/literature}
+  \input{chapters/methodology}
+  \input{chapters/results}
+\else
+  \input{chapters/introduction}
+  \input{chapters/literature}
+  \input{chapters/data}
+  \input{chapters/methodology}
+  \input{chapters/results}
+  \input{chapters/conclusions}
+\fi
+
+\clearpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{references}
+
+\clearpage
+\addcontentsline{toc}{chapter}{List of tables}
+\listoftables
+\addcontentsline{toc}{chapter}{List of figures}
+\listoffigures
+
+\end{document}

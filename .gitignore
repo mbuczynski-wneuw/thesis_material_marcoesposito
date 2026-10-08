@@ -1,0 +1,29 @@
+# Data (commit a fetch script or a small sample instead)
+data/*
+!data/.gitkeep
+
+# Python
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.lof
+*.lot
+*.out
+*.toc
+*.synctex.gz
+*.spl
+paper/thesis.pdf
+paper/article/article.pdf
+paper/article/article-thesis.pdf
+
+# OS and editors
+.DS_Store
+.idea/
